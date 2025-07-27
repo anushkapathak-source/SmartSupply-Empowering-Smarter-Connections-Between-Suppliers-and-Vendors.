@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat with Support Bot | FoodChain Connect</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #f0f8ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .chat-container {
+        width: 400px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .chat-header {
+        background: #3498db;
+        color: white;
+        padding: 16px;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .chat-box {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+      }
+
+      .message {
+        margin-bottom: 12px;
+        max-width: 75%;
+        padding: 10px 14px;
+        border-radius: 16px;
+        font-size: 0.95rem;
+      }
+
+      .bot-message {
+        background-color: #ecf0f1;
+        align-self: flex-start;
+      }
+
+      .user-message {
+        background-color: #3498db;
+        color: white;
+        align-self: flex-end;
+      }
+
+      .chat-input {
+        display: flex;
+        border-top: 1px solid #ccc;
+      }
+
+      .chat-input input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+      }
+
+      .chat-input button {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+
+      .chat-input button:hover {
+        background: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">Chat with Support Bot</div>
+      <div class="chat-box" id="chat-box">
+        <div class="message bot-message">
+          Hi there! How can I assist you today?
+        </div>
+      </div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type your message here..."
+        />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script>
+      function sendMessage() {
+        const userInput = document.getElementById("userInput");
+        const chatBox = document.getElementById("chat-box");
+        const message = userInput.value.trim();
+        if (message === "") return;
+
+        const userMsg = document.createElement("div");
+        userMsg.className = "message user-message";
+        userMsg.textContent = message;
+        chatBox.appendChild(userMsg);
+
+        userInput.value = "";
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // Fake bot response after 1s
+        setTimeout(() => {
+          const botMsg = document.createElement("div");
+          botMsg.className = "message bot-message";
+          botMsg.textContent = getBotReply(message);
+          chatBox.appendChild(botMsg);
+          chatBox.scrollTop = chatBox.scrollHeight;
+        }, 1000);
+      }
+
+      function getBotReply(input) {
+        const lower = input.toLowerCase();
+        if (lower.includes("order"))
+          return "You can view your orders from the 'Order History' page.";
+        if (lower.includes("supplier"))
+          return "Browse top-rated suppliers under 'Browse Material'.";
+        if (lower.includes("group"))
+          return "Join ongoing group buys from the 'Group Buy' section.";
+        if (lower.includes("wallet"))
+          return "Track your wallet transactions in the 'Wallet' section.";
+        return "Sorry, I didn't quite get that. Can you rephrase?";
+      }
+    </script>
+  </body>
+</html>

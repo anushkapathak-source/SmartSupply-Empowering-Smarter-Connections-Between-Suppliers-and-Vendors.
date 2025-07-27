@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Suppliers</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        background: #eef2f3;
+      }
+
+      h1 {
+        text-align: center;
+        padding: 20px;
+        background: #2e8b57;
+        color: white;
+        margin: 0;
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px;
+        gap: 20px;
+      }
+
+      .card {
+        background: white;
+        width: 280px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        padding: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .supplier-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #2e8b57;
+        margin-bottom: 8px;
+      }
+
+      .supplier-location {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .rating {
+        font-size: 1rem;
+        color: #f39c12;
+      }
+
+      .rating span {
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Our Trusted Suppliers</h1>
+
+    <div class="container">
+      <!-- 🌟 Horizontal Search Panel -->
+      <div style="display: flex; justify-content: center; margin: 30px auto">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f1f1f1;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+          "
+        >
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search suppliers by location (e.g. Pune, Satara)..."
+            style="
+              flex: 1;
+              padding: 12px 16px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+              font-size: 16px;
+            "
+          />
+
+          <button
+            onclick="clearSearch()"
+            style="
+              background: #4caf50;
+              color: white;
+              border: none;
+              padding: 12px 20px;
+              border-radius: 8px;
+              cursor: pointer;
+              font-weight: bold;
+              transition: 0.3s ease;
+            "
+          >
+            ❌ Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- Supplier Cards -->
+      <div class="card">
+        <div class="supplier-name">Ramesh Traders</div>
+        <div class="supplier-location">Pune, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">FreshFarm Agro</div>
+        <div class="supplier-location">Nashik, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Organic Roots</div>
+        <div class="supplier-location">Satara, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Kisan Mart</div>
+        <div class="supplier-location">Sangli, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">GreenFields</div>
+        <div class="supplier-location">Kolhapur, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Agrico Traders</div>
+        <div class="supplier-location">Ahmednagar, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">VishwaVeg</div>
+        <div class="supplier-location">Solapur, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">KrushiKart</div>
+        <div class="supplier-location">Jalgaon, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Bharat Agro</div>
+        <div class="supplier-location">Nagpur, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Sai Vegetables</div>
+        <div class="supplier-location">Thane, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">EcoFarm Pvt Ltd</div>
+        <div class="supplier-location">Aurangabad, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Shivneri Exports</div>
+        <div class="supplier-location">Beed, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Harvest India</div>
+        <div class="supplier-location">Amravati, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Mahafresh Distributors</div>
+        <div class="supplier-location">Wardha, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Pragati Veg Suppliers</div>
+        <div class="supplier-location">Bhandara, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">NaturaFoods</div>
+        <div class="supplier-location">Nanded, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">GreenGrow Ventures</div>
+        <div class="supplier-location">Chandrapur, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Sustainable Agri</div>
+        <div class="supplier-location">Osmanabad, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">FarmBasket</div>
+        <div class="supplier-location">Latur, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Evergreen Produce</div>
+        <div class="supplier-location">Dhule, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">RuralVeg Connect</div>
+        <div class="supplier-location">Parbhani, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">BioGrow Traders</div>
+        <div class="supplier-location">Akola, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">PureVeg</div>
+        <div class="supplier-location">Yavatmal, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">FarmEase</div>
+        <div class="supplier-location">Ratnagiri, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">AgroDirect</div>
+        <div class="supplier-location">Sindhudurg, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">Natural Roots</div>
+        <div class="supplier-location">Gondia, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">FreshKart</div>
+        <div class="supplier-location">Palghar, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">VitaVeg Foods</div>
+        <div class="supplier-location">Washim, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">GreenBridge Agro</div>
+        <div class="supplier-location">Hingoli, Maharashtra</div>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="card">
+        <div class="supplier-name">FieldFresh Enterprises</div>
+        <div class="supplier-location">Gadchiroli, Maharashtra</div>
+        <div class="rating">⭐⭐⭐</div>
+      </div>
+    </div>
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+
+      searchInput.addEventListener("keyup", function () {
+        const filter = searchInput.value.toLowerCase();
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach((card) => {
+          const location = card
+            .querySelector(".supplier-location")
+            .textContent.toLowerCase();
+          card.style.display = location.includes(filter) ? "block" : "none";
+        });
+      });
+
+      function clearSearch() {
+        searchInput.value = "";
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+          card.style.display = "block";
+        });
+      }
+    </script>
+  </body>
+</html>
